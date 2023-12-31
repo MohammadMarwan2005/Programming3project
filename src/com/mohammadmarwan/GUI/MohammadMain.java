@@ -18,18 +18,15 @@ public class MohammadMain {
     static ChargeMoneyView chargeMoneyView;
 
     public static void main(String[] args) {
-
         System.out.println(ChargingSystem.listOfUsers);
         Thread t = new Thread(MohammadMain::doS);
         t.start();
-
     }
 
     public static synchronized void doS() {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-
                 System.out.println("users = " + ChargingSystem.listOfUsers);
                 JFrame frame = new JFrame();
                 frame.setSize(650, 720);

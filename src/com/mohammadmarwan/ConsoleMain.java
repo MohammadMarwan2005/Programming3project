@@ -10,7 +10,13 @@ import com.mohammadmarwan.Structure.*;
 import java.util.ArrayList;
 
 public class ConsoleMain {
+
+
+
+
+
     public static void main(String[] args) {
+
 
         for (User user : ChargingSystem.listOfUsers) {
             System.out.println(user);
