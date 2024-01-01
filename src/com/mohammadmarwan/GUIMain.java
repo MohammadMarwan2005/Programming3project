@@ -1,6 +1,7 @@
-package com.mohammadmarwan.GUI;
+package com.mohammadmarwan;
 
 import com.mohammadmarwan.Charging.ChargingSystem;
+import com.mohammadmarwan.GUI.Controller;
 import com.mohammadmarwan.GUI.Items.MovieGridListView;
 import com.mohammadmarwan.GUI.Listeners.LoginListener;
 import com.mohammadmarwan.GUI.Listeners.SignUpListener;
@@ -9,7 +10,7 @@ import com.mohammadmarwan.Additional.Util;
 
 import javax.swing.*;
 
-public class MohammadMain {
+public class GUIMain {
 //    public static User currentUser = null;
     static LoginView loginView = new LoginView();
     static MovieGridListView gridMovie;
@@ -19,7 +20,7 @@ public class MohammadMain {
 
     public static void main(String[] args) {
         System.out.println(ChargingSystem.listOfUsers);
-        Thread t = new Thread(MohammadMain::doS);
+        Thread t = new Thread(GUIMain::doS);
         t.start();
     }
 
