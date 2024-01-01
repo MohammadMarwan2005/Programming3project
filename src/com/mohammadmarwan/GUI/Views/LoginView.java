@@ -1,9 +1,6 @@
 package com.mohammadmarwan.GUI.Views;
 
-import com.mohammadmarwan.additional.Util;
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class LoginView extends JFrame {

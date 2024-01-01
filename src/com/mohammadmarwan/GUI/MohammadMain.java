@@ -5,7 +5,7 @@ import com.mohammadmarwan.GUI.Items.MovieGridListView;
 import com.mohammadmarwan.GUI.Listeners.LoginListener;
 import com.mohammadmarwan.GUI.Listeners.SignUpListener;
 import com.mohammadmarwan.GUI.Views.*;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.Util;
 
 import javax.swing.*;
 

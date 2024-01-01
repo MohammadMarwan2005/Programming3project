@@ -8,7 +8,7 @@ import com.mohammadmarwan.CustomExceptions.UserNameIsNotExistException;
 import com.mohammadmarwan.GUI.Controller;
 import com.mohammadmarwan.IO.IO;
 import com.mohammadmarwan.Structure.*;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.Util;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,6 +20,8 @@ public class Ticketing implements Serializable {
     static Scanner scanner = new Scanner(System.in);
     static int x, y;
 
+    //region Console Methods:
+    @ForConsole
     public static void displayAvailableSeats(Cinema cinema) {
 
         // for every show time we have to make a file that have the available seats
@@ -75,7 +77,7 @@ public class Ticketing implements Serializable {
      * @throws UserNameIsAlreadyExistException which means:
      *                                         You should try if the userName is already exist, if yes retry with another userName
      */
-
+    @ForConsole
     public static void bookForNewCustomer(Cinema cinema, String userName) throws UserNameIsAlreadyExistException {
         if (ChargingSystem.userIsExist(userName)) {
             System.out.println("This userName is already taken for another one, enter another userName");
@@ -158,6 +160,62 @@ public class Ticketing implements Serializable {
         IO.saveUsersList(ChargingSystem.listOfUsers);
     }
 
+    /**
+     * cancelBooking() For Console
+     * */
+    @ForConsole
+    public static void cancelBooking(Cinema cinema, User user) throws UserNameIsNotExistException {
+        if (!ChargingSystem.userIsExist(user.getName()))
+            throw new UserNameIsNotExistException();
+
+        displayAvailableSeats(cinema);
+
+        List<Movie> movieList = cinema.getMovies();
+        List<Show> showList = movieList.get(x - 1).getShowTimes();
+
+
+        System.out.println("The user:" + user);
+
+        double predictedPrice = movieList.get(x - 1).getRowPrice() * showList.get(y - 1).getPro();
+
+        ArrayList<Ticket> toCancelTickets = new ArrayList<>();
+
+        for (Ticket t : user.getListOfBookedTickets()) {
+            if (t.getCinema() == cinema
+                    && t.getMovie() == movieList.get(x - 1)
+                    && t.getUser() == user
+            ) {
+                System.out.println("Do you want to cancel ticket (1: to cancel): \n" + t);
+                int choose = scanner.nextInt();
+                if (choose == 1) {
+                    toCancelTickets.add(t);
+                }
+            }
+        }
+
+        user.getListOfBookedTickets().removeAll(toCancelTickets);
+        showList.get(y - 1).addBook(-1 * toCancelTickets.size());
+        showList.get(y - 1).getBookedTickets().removeAll(toCancelTickets);
+        ChargingSystem.chargeUser(user, predictedPrice * toCancelTickets.size());
+
+
+        IO.saveCinema(cinema);
+
+        ChargingSystem.addUser(user);
+        IO.saveUsersList(ChargingSystem.listOfUsers);
+    }
+
+    // endregion
+
+    //region GUI Methods:
+
+    /**
+     * bookForOldCustomer(): For GUI
+     * @throws UserNameIsNotExistException which means:
+     *                                     You should make sure that the user is existed already in ChargingSystem.listOfUsers
+     * @throws PoorPersonException which means user budget < total price
+     **/
+    @ForGui
     public static void bookForOldCustomer(
             Controller controller,
             ArrayList<Integer> selectedList
@@ -224,47 +282,10 @@ public class Ticketing implements Serializable {
 
     }
 
-    public static void cancelBooking(Cinema cinema, User user) throws UserNameIsNotExistException {
-        if (!ChargingSystem.userIsExist(user.getName()))
-            throw new UserNameIsNotExistException();
-
-        displayAvailableSeats(cinema);
-
-        List<Movie> movieList = cinema.getMovies();
-        List<Show> showList = movieList.get(x - 1).getShowTimes();
-
-
-        System.out.println("The user:" + user);
-
-        double predictedPrice = movieList.get(x - 1).getRowPrice() * showList.get(y - 1).getPro();
-
-        ArrayList<Ticket> toCancelTickets = new ArrayList<>();
-
-        for (Ticket t : user.getListOfBookedTickets()) {
-            if (t.getCinema() == cinema
-                    && t.getMovie() == movieList.get(x - 1)
-                    && t.getUser() == user
-            ) {
-                System.out.println("Do you want to cancel ticket (1: to cancel): \n" + t);
-                int choose = scanner.nextInt();
-                if (choose == 1) {
-                    toCancelTickets.add(t);
-                }
-            }
-        }
-
-        user.getListOfBookedTickets().removeAll(toCancelTickets);
-        showList.get(y - 1).addBook(-1 * toCancelTickets.size());
-        showList.get(y - 1).getBookedTickets().removeAll(toCancelTickets);
-        ChargingSystem.chargeUser(user, predictedPrice * toCancelTickets.size());
-
-
-        IO.saveCinema(cinema);
-
-        ChargingSystem.addUser(user);
-        IO.saveUsersList(ChargingSystem.listOfUsers);
-    }
-
+    /**
+     * cancelBooking(): For GUI
+     * */
+    @ForGui
     public static void cancelBooking(
             Controller controller,
             ArrayList<Integer> tickets
@@ -301,8 +322,6 @@ public class Ticketing implements Serializable {
 
         System.out.println("The user:" + user);
 
-
-
         double predictedPrice = Util.round(movie.getRowPrice() * show.getPro(), 1);
 
         try {
@@ -325,7 +344,6 @@ public class Ticketing implements Serializable {
         } catch (Exception ignored) {
 
         }
-//
 
         IO.saveCinema(cinema);
 
@@ -336,4 +354,6 @@ public class Ticketing implements Serializable {
         controller.setCurrentUser(user);
 
     }
+
+    //endregion
 }

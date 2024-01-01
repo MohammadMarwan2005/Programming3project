@@ -5,8 +5,8 @@ import com.mohammadmarwan.GUI.Controller;
 import com.mohammadmarwan.GUI.Views.AccountDetailsView;
 import com.mohammadmarwan.GUI.Views.LoginView;
 import com.mohammadmarwan.Structure.User;
-import com.mohammadmarwan.additional.IsValid;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.IsValid;
+import com.mohammadmarwan.Additional.Util;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

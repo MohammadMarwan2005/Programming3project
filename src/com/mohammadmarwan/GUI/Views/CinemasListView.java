@@ -4,7 +4,7 @@ import com.mohammadmarwan.GUI.Controller;
 import com.mohammadmarwan.GUI.Items.GrayYellowButton;
 import com.mohammadmarwan.GUI.Items.MovieGridListView;
 import com.mohammadmarwan.Structure.Cinema;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.Util;
 
 import javax.swing.*;
 import java.awt.*;

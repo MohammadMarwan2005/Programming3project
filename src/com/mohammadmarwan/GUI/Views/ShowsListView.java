@@ -3,7 +3,7 @@ package com.mohammadmarwan.GUI.Views;
 import com.mohammadmarwan.GUI.Controller;
 import com.mohammadmarwan.GUI.Items.GrayYellowButton;
 import com.mohammadmarwan.Structure.Show;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.Util;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;

@@ -4,7 +4,7 @@ import com.mohammadmarwan.Charging.ChargingSystem;
 import com.mohammadmarwan.CustomExceptions.UserNameIsNotExistException;
 import com.mohammadmarwan.GUI.Controller;
 import com.mohammadmarwan.GUI.Views.AccountDetailsView;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.Util;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

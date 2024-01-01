@@ -8,7 +8,7 @@ import com.mohammadmarwan.GUI.Items.WhiteTextLabel;
 import com.mohammadmarwan.Logic.Ticketing;
 import com.mohammadmarwan.Structure.Show;
 import com.mohammadmarwan.Structure.Ticket;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.Util;
 
 import javax.swing.*;
 import java.awt.*;

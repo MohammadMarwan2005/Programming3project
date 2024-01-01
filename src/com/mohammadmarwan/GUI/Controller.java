@@ -8,7 +8,7 @@ import com.mohammadmarwan.Structure.Cinema;
 import com.mohammadmarwan.Structure.Movie;
 import com.mohammadmarwan.Structure.Show;
 import com.mohammadmarwan.Structure.User;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.Util;
 
 import javax.swing.*;
 import java.time.format.DateTimeFormatter;

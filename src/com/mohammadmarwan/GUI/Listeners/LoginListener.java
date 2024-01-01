@@ -6,8 +6,8 @@ import com.mohammadmarwan.GUI.Views.AccountDetailsView;
 import com.mohammadmarwan.GUI.Views.LoginView;
 import com.mohammadmarwan.CustomExceptions.UserNameIsNotExistException;
 import com.mohammadmarwan.CustomExceptions.WrongPasswordException;
-import com.mohammadmarwan.additional.IsValid;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.IsValid;
+import com.mohammadmarwan.Additional.Util;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

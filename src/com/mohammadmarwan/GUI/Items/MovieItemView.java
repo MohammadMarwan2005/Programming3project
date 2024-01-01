@@ -2,7 +2,7 @@ package com.mohammadmarwan.GUI.Items;
 
 import com.mohammadmarwan.GUI.Controller;
 import com.mohammadmarwan.Structure.Movie;
-import com.mohammadmarwan.additional.Util;
+import com.mohammadmarwan.Additional.Util;
 
 import javax.swing.*;
 import java.awt.*;
