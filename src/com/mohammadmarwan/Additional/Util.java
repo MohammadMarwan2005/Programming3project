@@ -18,6 +18,8 @@ public class Util {
 
     public static final Color disabledColor = new Color(97, 11, 33);
 
+    public static String projectRoot = System.getProperty("user.dir");
+
     public static IsValid isValidPassword(String password1, String password2) {
         if (password1.length() < 8) {
             return new IsValid(false, "Password is too short.");
@@ -67,7 +69,7 @@ public class Util {
                 MovieType.ACTION,
                 showList,
                 10,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\Spider-Man.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\Spider-Man.jpg"
         );
 
         Movie movie2 = new Movie(
@@ -76,7 +78,7 @@ public class Util {
                 MovieType.FICTION,
                 showList,
                 11,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\green mile.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\green mile.jpg"
         );
         Movie movie3 = new Movie(
                 5656565,
@@ -84,7 +86,7 @@ public class Util {
                 MovieType.FICTION,
                 showList,
                 12,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\interstellar.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\interstellar.jpg"
         );
         Movie movie4 = new Movie(
                 89989898,
@@ -92,7 +94,7 @@ public class Util {
                 MovieType.COMEDY,
                 showList,
                 13,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\national security.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\national security.jpg"
         );
         Movie movie5 = new Movie(
                 5000,
@@ -100,7 +102,7 @@ public class Util {
                 MovieType.ACTION,
                 showList,
                 14,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\escape plan.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\escape plan.jpg"
         );
         Movie movie6 = new Movie(
                 69689898,
@@ -108,7 +110,7 @@ public class Util {
                 MovieType.ACTION,
                 showList,
                 15,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\extraction.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\extraction.jpg"
         );
         Movie movie7 = new Movie(
                 87979898,
@@ -116,7 +118,7 @@ public class Util {
                 MovieType.ACTION,
                 showList,
                 16,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\extraction 2.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\extraction 2.jpg"
         );
         Movie movie8 = new Movie(
                 89889888,
@@ -124,7 +126,7 @@ public class Util {
                 MovieType.FICTION,
                 showList,
                 17,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\inception.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\inception.jpg"
         );
 
         Movie movie9 = new Movie(
@@ -133,7 +135,7 @@ public class Util {
                 MovieType.HORROR,
                 showList,
                 18,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\insidious.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\insidious.jpg"
         );
         Movie movie10 = new Movie(
                 1010101010,
@@ -141,7 +143,7 @@ public class Util {
                 MovieType.CARTOON,
                 showList,
                 19,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\toy story.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\toy story.jpg"
         );
         Movie movie11 = new Movie(
                 1110110111,
@@ -149,7 +151,7 @@ public class Util {
                 MovieType.CARTOON,
                 showList,
                 20,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\toy story 2.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\toy story 2.jpg"
         );
 
         Movie movie12 = new Movie(
@@ -158,7 +160,7 @@ public class Util {
                 MovieType.ACTION,
                 showList,
                 21,
-                "C:\\Users\\HP\\IdeaProjects\\Programming 3 project\\src\\com\\mohammadmarwan\\Drawable\\the avengers.jpg"
+                projectRoot + "\\src\\com\\mohammadmarwan\\Drawable\\the avengers.jpg"
         );
 
         movieVector.add(movie1);
