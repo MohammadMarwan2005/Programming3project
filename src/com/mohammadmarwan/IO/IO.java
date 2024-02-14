@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IO {
-    public static String UNIQUE_STRING = "بيو بيو يا أحمد يا محسن";
+    public static String UNIQUE_STRING = "USERS";
 
     public static void saveCinema(Cinema cinema) {
         File file = new File(cinema.getName());
